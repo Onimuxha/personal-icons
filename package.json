@@ -1,6 +1,6 @@
 {
   "name": "personal-icons",
-  "version": "1.0.9",
+  "version": "1.0.11",
   "description": "A personal icon library.",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
@@ -10,15 +10,14 @@
     "dist"
   ],
   "scripts": {
-    "dev": "vite",
-    "generate:icons": "ts-node scripts/generate-icons.ts",
+    "generate:icons": "node --loader ts-node/esm src/scripts/generate-icons.ts",
     "build:lib": "tsup src/lib/index.ts --format cjs,esm --dts --clean",
     "build:site": "vite build",
     "build": "npm run generate:icons && npm run build:lib && npm run build:site"
   },
   "peerDependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
   },
   "devDependencies": {
     "@types/node": "^24.3.1",
